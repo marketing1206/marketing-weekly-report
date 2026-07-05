@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom visual scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+/* ------------------------------------------------------------
+    HIGH-QUALITY PRINT & PDF EXPORT STYLING
+   ------------------------------------------------------------ */
+@media print {
+  /* Hide non-report layout elements */
+  #header_navbar,
+  #timeline_select,
+  #tab_nav_report,
+  #tab_nav_control,
+  #brand_selectors,
+  #category_tab_buttons,
+  #comment_edit_section,
+  #global_notification,
+  .no-print,
+  button,
+  select,
+  form,
+  .brand-selectors-bar,
+  header {
+    display: none !important;
+  }
+
+  /* Force background color & layout adjustments */
+  body, html, #app_root, main {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Force browsers to print chart colors, icons, and highlights */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Prevent page-break separation inside cards, charts, and tables */
+  .card, 
+  section, 
+  table, 
+  tr, 
+  .overflow-hidden,
+  .bg-white {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Format specific charts and layouts to stretch nicely */
+  .grid {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .grid > div {
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Set nice standard A4 margins */
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Marketng-Report_v2",
+  "description": "Imported from GitHub: kdung1206/Marketng-Report_v2",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
